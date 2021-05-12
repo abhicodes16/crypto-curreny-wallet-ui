@@ -17,7 +17,8 @@ class HomePage extends State<Home> {
 
 
   int _currentIndex = 0;
-  final List<Widget> _children = [
+  
+  var _children = [
     Wallet(),
     Category(),
     Transaction(),

@@ -1,7 +1,9 @@
-import 'package:dynamic_theme/dynamic_theme.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wallets/screens/home.dart';
+import 'package:wallets/screens/splashScreen.dart';
+import 'package:wallets/style/constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,30 +14,32 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle.light.copyWith(statusBarColor: Colors.transparent),
+    );
 
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
-
-    return DynamicTheme(
-        defaultBrightness: Brightness.light,
-        data: (brightness) => ThemeData(
-          brightness: brightness,
-          //rest of the themeData
-          //you can also use conditioning here based on the current
-          //brightness mode (dark or light). For ex:
-          // primarySwatch: brightness == Brighness.dark ? Colors.white : Colors.black
+    return AdaptiveTheme(
+        light: ThemeData(
+          brightness: Brightness.light,
+          primaryColor: kThemeColor,
+          primarySwatch: Colors.yellow,
         ),
-        themedWidgetBuilder: (context, theme) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Softieons CRM',
-            theme: theme,
-            home: Home(),
-          );
-        });
-
-
+        dark: ThemeData(
+          brightness: Brightness.dark,
+          primarySwatch: Colors.yellow,
+          accentColor: Colors.amber,
+          primaryColor: kBlack,
+          canvasColor: Colors.black,
+          cardColor: kBlack,
+          bottomAppBarColor: Colors.grey[900],
+        ),
+        initial: AdaptiveThemeMode.light,
+        builder: (theme, darkTheme) => MaterialApp(
+              title: 'PhonePe Property',
+              debugShowCheckedModeBanner: false,
+              theme: theme,
+              darkTheme: darkTheme,
+              home: SplashScreen(),
+            ));
   }
-
 }

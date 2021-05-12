@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wallets/style/Palette.dart';
 
 
 class Category extends StatefulWidget{
@@ -15,6 +17,15 @@ class Page extends State<Category> {
   EdgeInsets _five = EdgeInsets.all(5.0);
   EdgeInsets _standard = EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0);
 
+  bool isdark = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _darkSwitchValue(isdark);
+  }
+
+
 
   /* -----//////////////////////////////////////////////////////////////////////---- */
   /* -------------------------------- Main Build Function -------------------------- */
@@ -26,6 +37,9 @@ class Page extends State<Category> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Explore'),
+        // flexibleSpace: isdark
+        //     ? Container(decoration: Palette.appbarDarkGradient)
+        //     : Container(decoration: Palette.appbarGradient),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -1461,7 +1475,14 @@ class Page extends State<Category> {
 
   }
 
-
+  Future<bool> _darkSwitchValue(bool isDark) async {
+    var pref = await SharedPreferences.getInstance();
+    setState(() {
+      isdark = pref.getBool('isDark') ?? false;
+    });
+    print("get value" + isdark.toString());
+    return false;
+  }
 }
 
 
