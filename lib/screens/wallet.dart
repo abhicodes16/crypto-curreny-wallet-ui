@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallets/screens/notifications.dart';
 import 'package:wallets/style/Palette.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -31,18 +32,22 @@ class Page extends State<Wallet> {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Home'),
+          automaticallyImplyLeading: false,
           // flexibleSpace: isdark
           //   ? Container(decoration: Palette.appbarDarkGradient)
           //   : Container(decoration: Palette.appbarGradient),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.notifications),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Notifications()));
+              },
             ),
-            IconButton(
-              icon: Icon(Icons.add),
-              onPressed: () {},
-            ),
+            // IconButton(
+            //   icon: Icon(Icons.add),
+            //   onPressed: () {},
+            // ),
           ],
           bottom: TabBar(
             tabs: <Widget>[

@@ -48,6 +48,7 @@ class Page extends State<Transaction> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Transaction'),
+        automaticallyImplyLeading: false,
         // flexibleSpace: isdark
         //     ? Container(decoration: Palette.appbarDarkGradient)
         //     : Container(decoration: Palette.appbarGradient),

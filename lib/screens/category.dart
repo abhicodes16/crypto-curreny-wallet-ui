@@ -37,6 +37,7 @@ class Page extends State<Category> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Explore'),
+        automaticallyImplyLeading: false,
         // flexibleSpace: isdark
         //     ? Container(decoration: Palette.appbarDarkGradient)
         //     : Container(decoration: Palette.appbarGradient),

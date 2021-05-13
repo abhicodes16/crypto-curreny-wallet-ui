@@ -45,12 +45,13 @@ class Page extends State<Settings> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Settings'),
+        automaticallyImplyLeading: false,
         // flexibleSpace: isdark
         //     ? Container(decoration: Palette.appbarDarkGradient)
         //     : Container(decoration: Palette.appbarGradient),
       ),
 
-      /*------------------ body ----------------*/
+      /*------------------ Body ----------------*/
       body: ListView(
         children: <Widget>[
           SizedBox(height: 10.0),
@@ -629,4 +630,5 @@ class Page extends State<Settings> {
       print(isdark);
     }
   }
+
 }

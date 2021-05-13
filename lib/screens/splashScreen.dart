@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:wallets/screens/home.dart';
+import 'package:wallets/screens/onboarding/onboarding.dart';
 import 'package:wallets/style/Palette.dart';
 import 'package:wallets/style/constants.dart';
 
@@ -44,6 +45,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void navigateUser() async {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Home()));
+        context, MaterialPageRoute(builder: (context) => Onboarding()));
   }
 }
