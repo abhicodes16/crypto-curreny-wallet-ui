@@ -3,21 +3,16 @@ import 'package:wallets/screens/category.dart';
 import 'package:wallets/screens/settings.dart';
 import 'package:wallets/screens/transaction.dart';
 import 'package:wallets/screens/wallet.dart';
+import 'package:wallets/style/constants.dart';
 
-
-class Home extends StatefulWidget{
-
+class Home extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => HomePage();
-
-
 }
 
 class HomePage extends State<Home> {
-
-
   int _currentIndex = 0;
-  
+
   var _children = [
     Wallet(),
     Category(),
@@ -31,16 +26,13 @@ class HomePage extends State<Home> {
     });
   }
 
-
   /* -----//////////////////////////////////////////////////////////////////////---- */
   /* -------------------------------- Main Build Function -------------------------- */
   /* -----//////////////////////////////////////////////////////////////////////---- */
   @override
   Widget build(BuildContext context) {
-
     /* ------------------------------------- Main Scaffold Function --------------------------- */
     return Scaffold(
-
       /*------------------ body ----------------*/
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -48,16 +40,17 @@ class HomePage extends State<Home> {
         currentIndex: _currentIndex, // new
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        selectedItemColor: kThemeColor,
         type: BottomNavigationBarType.fixed,
         iconSize: 26.0,
         items: [
           BottomNavigationBarItem(
-          icon: Icon(Icons.security),
-          title: Text('Wallet'),
+            icon: Icon(Icons.security),
+            title: Text('Wallet'),
           ),
           BottomNavigationBarItem(
-          icon: Icon(Icons.dashboard),
-          title: Text('Dashboard'),
+            icon: Icon(Icons.dashboard),
+            title: Text('Dashboard'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.swap_horiz),
@@ -69,14 +62,6 @@ class HomePage extends State<Home> {
           )
         ],
       ),
-
     );
-
-
-
   }
-
-
 }
-
-
