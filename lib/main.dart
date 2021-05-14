@@ -23,11 +23,12 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
           primaryColor: kThemeColor,
           primarySwatch: Colors.yellow,
+          accentColor: kThemeColor,
         ),
         dark: ThemeData(
           brightness: Brightness.dark,
           primarySwatch: Colors.yellow,
-          accentColor: Colors.amber,
+          accentColor: kThemeColor,
           primaryColor: kBlack,
           canvasColor: Colors.black,
           cardColor: kBlack,

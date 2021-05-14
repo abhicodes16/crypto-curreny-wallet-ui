@@ -54,7 +54,7 @@ class Page extends State<Category> {
       body: ListView(
         children: <Widget>[
 
-          Container(margin: _five,),
+          Container(margin: _five),
 
           /*---------- First Container -----------*/
           Container(

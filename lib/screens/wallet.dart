@@ -33,9 +33,6 @@ class Page extends State<Wallet> {
         appBar: AppBar(
           title: Text('Home'),
           automaticallyImplyLeading: false,
-          // flexibleSpace: isdark
-          //   ? Container(decoration: Palette.appbarDarkGradient)
-          //   : Container(decoration: Palette.appbarGradient),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.notifications),
