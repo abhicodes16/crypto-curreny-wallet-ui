@@ -2,9 +2,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 // Colors
-const Color kThemeColor = Color(0xFF670069);
-const Color kLightThemeColor = Color(0xFFD900F7);
-const Color kDarkThemeColor = Color(0xFF61187A);
+// const Color kThemeColor = Color(0xFFfacd2a);
+// const Color kLightThemeColor = Color(0xFFd99a07);
+// const Color kDarkThemeColor = Color(0xFFffd53d);
+const Color kThemeColor = Color(0xFFBCD5EA);
+const Color kLightThemeColor = Color(0xFFBCD5EA);
+const Color kDarkThemeColor = Color(0xFFBCD5EA);
 const Color kWhite = Color(0xFFFFFFFF);
 const Color kGrey = Color(0xFFebeced);
 Color kCanvasGrey = Colors.grey[50];

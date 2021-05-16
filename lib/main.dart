@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return AdaptiveTheme(
         light: ThemeData(
           brightness: Brightness.light,
-          primaryColor: kThemeColor,
+          primaryColor: kWhite,
           primarySwatch: Colors.yellow,
           accentColor: kThemeColor,
         ),

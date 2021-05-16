@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wallets/screens/notifications.dart';
-import 'package:wallets/style/Palette.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wallets/style/Palette.dart';
+import 'package:wallets/style/constants.dart';
 
 class Wallet extends StatefulWidget {
   @override
@@ -31,34 +32,44 @@ class Page extends State<Wallet> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Home'),
-          automaticallyImplyLeading: false,
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.notifications),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Notifications()));
-              },
-            ),
-            // IconButton(
-            //   icon: Icon(Icons.add),
-            //   onPressed: () {},
-            // ),
-          ],
+          //backgroundColor: Colors.white,
+          elevation: 0,
+          title: Text('Home', style: Palette.appbarTitle),
           bottom: TabBar(
-            tabs: <Widget>[
-              Tab(
-                text: "Tokens",
-              ),
-              Tab(
-                text: "Finance",
-              ),
-              Tab(
-                text: "Collectibles",
-              )
-            ],
-          ),
+              //labelColor: Colors.amber[700],
+              //unselectedLabelColor: Colors.black,
+              indicatorSize: TabBarIndicatorSize.label,
+              indicator: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)),
+                  color: kThemeColor),
+              tabs: [
+                Tab(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text("TOKENS"),
+                  ),
+                ),
+                Tab(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text("FINANCE"),
+                  ),
+                ),
+                Tab(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text("COLLECTIBL"),
+                  ),
+                ),
+              ]),
+          actions: [
+            IconButton(
+                icon: Icon(Icons.notifications_active_rounded),
+                onPressed: () {})
+          ],
+          automaticallyImplyLeading: false,
         ),
 
         /*------------------ body ----------------*/
@@ -74,7 +85,7 @@ class Page extends State<Wallet> {
     return ListView(
       children: <Widget>[
         Container(
-          margin: _five * 3,
+          margin: _five * 5,
         ),
         Container(
           margin: _standard,
@@ -102,8 +113,8 @@ class Page extends State<Wallet> {
           margin: _five * 2,
         ),
         Card(
-          elevation: 10.0,
-          shadowColor: Colors.black.withOpacity(0.3),
+          elevation: 12.0,
+          shadowColor: kDarkThemeColor,
           margin: _standard,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
