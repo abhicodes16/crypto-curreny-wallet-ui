@@ -63,12 +63,35 @@ class Page extends State<Transaction> {
                 onPressed: () {},
               )
             ],
+            // bottom: TabBar(
+            //   tabs: <Widget>[
+            //     Tab(text: "Swap"),
+            //     Tab(text: "Exchange"),
+            //   ],
+            // ),
             bottom: TabBar(
-              tabs: <Widget>[
-                Tab(text: "Swap"),
-                Tab(text: "Exchange"),
-              ],
-            ),
+                //labelColor: Colors.amber[700],
+                //unselectedLabelColor: Colors.black,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicator: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10)),
+                    color: kThemeColor),
+                tabs: [
+                  Tab(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text("SWAP"),
+                    ),
+                  ),
+                  Tab(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text("EXCHANGE"),
+                    ),
+                  ),
+                ]),
           ),
           /*------------------ body ----------------*/
           body: TabBarView(children: [_swapWidget(), _exchangeWidget()])),
